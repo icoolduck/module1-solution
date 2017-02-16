@@ -1,29 +1,38 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html ng-app='LunchCheck'>
   <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
+
   </head>
-<body>
-   <div class="container">
-     <h1>Lunch Checker</h1>
+  <body>
+    <div class="container" >
+    <h1>Lunch Checker</h1>
+    <div ng-controller='LunchCheckController'>
+      <div class="form-group">
+            <input id="lunch-menu" type="text" ng-model="lunchitems"
+            placeholder="List comma separated dishes you usually have for lunch."
+            class="form-control">
+            <span>Note: Empty space(s) separated by comma will not by counted as a dish.</span>
 
-         <div class="form-group">
-             <input id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch. Empty comma separated spaces would not be counted."
-             class="form-control">
-         </div>
-         <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
-         </div>
-         <div class="form-group message">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default" ng-click="lunchMenu()">Check If Too Much</button>
+      </div>
+      <div class="form-group message">
            <!-- Your message can go here. -->
-         </div>
-   </div>
+            {{message}}
 
-</body>
+      </div>
+    </div>
+  </div>
+
+  </body>
 </html>
