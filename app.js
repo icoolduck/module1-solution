@@ -9,6 +9,10 @@ function LunchCheckController ($scope) {
 
   $scope.lunchitems = '';
 
+  $scope.onChange = function(){
+      $scope.message = "";
+  }
+
   $scope.lunchMenu = function(){
 
    if($scope.lunchitems.length === 0){
